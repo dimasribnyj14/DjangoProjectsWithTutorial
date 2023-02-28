@@ -21,7 +21,8 @@ function copycode(event){
 }
 function offAnimation(event){
     OnAnimation = true;
-    copyBlock.style.left = '-50%';
+    copyBlock.style.transition.duration = "1s";
+    copyBlock.style.left = '-100%';
 }
 
 document.addEventListener('click',copycode)

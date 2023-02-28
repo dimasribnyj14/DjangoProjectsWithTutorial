@@ -7,61 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LocalStorage JavaScript</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/logo_better.png' %}">
 </head>
 <body>
     <header>
         <h1 class='head'>Тема JavaScript'a: LocalStorage</h1>
-        <p class='head'>Источник данной информации был предоставлен компании Mozilla Foundation</p>
+        <p class='head'>Джерело цієї інформації було надано компанії Mozilla Foundation</p>
     </header>
     <div class='content'>
-        <h3 class='copied'>Скопировано в буфер обмена</h3>
+        <h3 class='copied'>Скопійовано в буфер обміну</h3>
+        <div class='dis'>
+            <a class='dis-text' href="discussions">Дискусія</a>
+        </div>
+        
         <div class='block'>
-            <h1 class='main-text'><strong>Window.localStorage</strong></h1>
+            <h1 class='main-text'>Window.localStorage</h1>
             <p class='abstract'>
-                Свойство localStorage позволяет получить доступ к Storage объекту. localStorage аналогично свойству sessionStorage. 
-                Разница только в том, что свойство sessionStorage хранит данные в течение сеанса (до закрытия браузера), в отличие от данных, находящихся в свойстве localStorage, которые не имеют ограничений по времени хранения и могут быть удалены только с помощью JavaScript.
-                Следует отметить, что данные, сохранённые как в localStorage, так и в sessionStorage, являться специфичными для протокола страницы.
-                Ключи и значения всегда строки (так же, как и объекты, целочисленные ключи автоматически будут преобразованы в строки).
+                Властивість <strong>localStorage</strong> дозволяє отримати доступ до об'єкта <strong>Storage</strong>. 
+                <strong>localStorage</strong> аналогічно властивості <strong>sessionStorage</strong>.
+                Різниця лише в тому, що властивість <strong>sessionStorage</strong> зберігає дані протягом сеансу (до закриття браузера), 
+                на відміну від даних, що знаходяться у властивості <strong>localStorage</strong>, 
+                які не мають обмежень за часом зберігання та можуть бути видалені лише за допомогою <strong>JavaScript</strong>. 
+                Слід зазначити, що дані, збережені як у <strong>localStorage</strong>, і у <strong>sessionStorage</strong>, є специфічними для протоколу сторінки. 
+                Ключі та значення завжди рядки (так само, як і об'єкти, цілі ключі автоматично будуть перетворені на рядки).
             </p>
             <h2>Синтаксис</h2>
             <div class='code'>
                 myStorage = window.localStorage;
             </div>
-            <h2>Значения</h2>
-            <p class='abstract'>Объект Storage, который используется для доступа к текущему локальному хранилищу.</p>
-            <h2>Исключения</h2>
+            <h2>Значення</h2>
+            <p class='abstract'>Об'єкт <strong>Storage</strong>, який використовується для доступу до локального сховища.</p>
+            <h2>Винятки</h2>
             <div class='code'>
                 SecurityError
             </div>
             <p class='abstract'>
-                Запрос к хранилищу нарушает разрешение политик, либо источник для хранения не является корректной комбинацией схема/хост/порт 
-                (такое может произойти, если источником для хранения является file: или data: схемы, например). 
-                Как ещё один пример появления ошибки, пользователь через конфигурацию браузера запретил хранение данных для некоторых источников.
+                Запит до сховища порушує дозвіл політик, або джерело зберігання не є коректною комбінацією схема/хост/порт 
+                (таке може статися, якщо джерелом для зберігання є <strong>file:</strong> або <strong>data:</strong> схеми, наприклад). 
+                Як ще один приклад появи помилки користувач через конфігурацію браузера заборонив зберігання даних для деяких джерел.
             </p>
-            <h2>Пример</h2>
+            <h2>Наприклад</h2>
             <p class='abstract'>
-                Следующий код показывает пример доступа к локальному объекту Storage для текущего домена и добавляет данные в него с помощью Storage.setItem().
+                Наступний код показує приклад доступу до локального об'єкта <strong>Storage</strong> для поточного домену і додає дані до нього за допомогою <strong>Storage.setItem()</strong>.
             </p>
             <div class='code'>
                 localStorage.setItem('myLesson', 'Math');
             </div>
-            <p class='abstract'>Считывать данные из localStorage для определённого ключа, можно следующим образом:</p>
+            <p class='abstract'>Зчитувати дані з <strong>localStorage</strong> для певного ключа можна так:</p>
             <div class='code'>
                 let lesson = localStorage.getItem('myLesson');
             </div>
-            <p class='abstract'>Удалять данные можно так:</p>
+            <p class='abstract'>Видаляти дані можна так (після видалення поверне <strong>undefined</strong>):</p>
             <div class='code'>
-                localStorage.removeItem('myLesson'); (вернёт undefined)
+                localStorage.removeItem('myLesson');
             </div>
-            <p class='abstract'>Для удаления всех записей, то есть полной очистки localStorage, используйте:</p>
+            <p class='abstract'>Для видалення всіх записів, тобто повного очищення <strong>localStorage</strong>, використовуйте:</p>
             <div class='code'>
                 localStorage.clear();
             </div>
         </div>
     </div>
     <footer>
-        <p class='foot'>Электронная почта для сотрудничества: <a class='emailto' href="mailto: dimasribnyj12@gmail.com">dimasribnyj12@gmail.com</a> (вы просто можете нажать на электронную почту)</p>     
-        <p class='foot'>Источник данной информации был предоставлен компании Mozilla Foundation</p>
+        <p class='foot'>Електронна пошта для співпраці: <a class='emailto' href="mailto: dimasribnyj12@gmail.com">dimasribnyj12@gmail.com</a> (ви можете просто натиснути на електронну пошту)</p>     
+        <p class='foot'>Джерело цієї інформації було надано компанії Mozilla Foundation</p>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussions LocalStorage</title>
+    <link rel="stylesheet" href="{% static 'css/discussion.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/logo_better.png' %}">
+</head>
+<body>
+    <header>
+        <h1 class='main-text'>Дискусія</h1>
+        <h2 class='warning'>Увага!</h2>
+        <h4 class='warning-more'>
+            Не довіряйте тим, хто пишуть, видають себе за творця сайту! 
+            Справжній автор сайту не пише нічого в постах, лише відповідає особисто поштою.
+        </h4>
+    </header>
+    <div class='content'>
+        {% for post in list_posts %}
+        <h3>Автор поста: {{ post.name }}</p>
+        <p>{{ post.text }}</p>
+        <hr>
+        {% endfor %}
+    <form method="post" enctype="multipart/form-data" action="discussions">
+        {% csrf_token %}
+        <h3 class='create-post'>Створити пост</h3>
+        <p><input type="text" placeholder="Автор (Обов'язково)" name="name" class='name-author' required></p>
+        <p><textarea class='area-text' name="text" cols="30" rows="10" placeholder="Контент (Обов'язково)"  required style="resize: none;"></textarea></p>
+        <button class='just-button'>Створити</button>
+    </div>
+    <footer>
+        <div class='foot'>
+            <div class='back'>
+                <a href='#' class = 'back-button' onclick='history.back();return false;'>Повернутися до теми</a>
+            </div>
+            
+            <h2 class='topic'>JavaScript: LocalStorage</h2>
+        </div>
+
+    </footer>
+    <script src="{% static 'js/discuss.js' %}"></script>
+</body>
+</html>

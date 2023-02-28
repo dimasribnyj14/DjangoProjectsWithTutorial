@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from LSApp.views import localstorage_show
-
+from LocalStorage.settings import *
+from django.conf.urls.static import static
+from Discussions.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',localstorage_show),
+    path('',localstorage_show,name='main'),
+    path('discussions',discussions,name='discussions'),
 ]
+if DEBUG:
+	urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
