@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from LSApp.views import localstorage_show
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',localstorage_show),
 ]

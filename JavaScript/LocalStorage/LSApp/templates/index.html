@@ -10,10 +10,59 @@
 </head>
 <body>
     <header>
-        <h1>Тема JavaScript'a: LocalStorage</h1>
-        <p>Источник данной информации был предоставлен компании Mozilla Foundation</p>
+        <h1 class='head'>Тема JavaScript'a: LocalStorage</h1>
+        <p class='head'>Источник данной информации был предоставлен компании Mozilla Foundation</p>
     </header>
-
+    <div class='content'>
+        <h3 class='copied'>Скопировано в буфер обмена</h3>
+        <div class='block'>
+            <h1 class='main-text'><strong>Window.localStorage</strong></h1>
+            <p class='abstract'>
+                Свойство localStorage позволяет получить доступ к Storage объекту. localStorage аналогично свойству sessionStorage. 
+                Разница только в том, что свойство sessionStorage хранит данные в течение сеанса (до закрытия браузера), в отличие от данных, находящихся в свойстве localStorage, которые не имеют ограничений по времени хранения и могут быть удалены только с помощью JavaScript.
+                Следует отметить, что данные, сохранённые как в localStorage, так и в sessionStorage, являться специфичными для протокола страницы.
+                Ключи и значения всегда строки (так же, как и объекты, целочисленные ключи автоматически будут преобразованы в строки).
+            </p>
+            <h2>Синтаксис</h2>
+            <div class='code'>
+                myStorage = window.localStorage;
+            </div>
+            <h2>Значения</h2>
+            <p class='abstract'>Объект Storage, который используется для доступа к текущему локальному хранилищу.</p>
+            <h2>Исключения</h2>
+            <div class='code'>
+                SecurityError
+            </div>
+            <p class='abstract'>
+                Запрос к хранилищу нарушает разрешение политик, либо источник для хранения не является корректной комбинацией схема/хост/порт 
+                (такое может произойти, если источником для хранения является file: или data: схемы, например). 
+                Как ещё один пример появления ошибки, пользователь через конфигурацию браузера запретил хранение данных для некоторых источников.
+            </p>
+            <h2>Пример</h2>
+            <p class='abstract'>
+                Следующий код показывает пример доступа к локальному объекту Storage для текущего домена и добавляет данные в него с помощью Storage.setItem().
+            </p>
+            <div class='code'>
+                localStorage.setItem('myLesson', 'Math');
+            </div>
+            <p class='abstract'>Считывать данные из localStorage для определённого ключа, можно следующим образом:</p>
+            <div class='code'>
+                let lesson = localStorage.getItem('myLesson');
+            </div>
+            <p class='abstract'>Удалять данные можно так:</p>
+            <div class='code'>
+                localStorage.removeItem('myLesson'); (вернёт undefined)
+            </div>
+            <p class='abstract'>Для удаления всех записей, то есть полной очистки localStorage, используйте:</p>
+            <div class='code'>
+                localStorage.clear();
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class='foot'>Электронная почта для сотрудничества: <a class='emailto' href="mailto: dimasribnyj12@gmail.com">dimasribnyj12@gmail.com</a> (вы просто можете нажать на электронную почту)</p>     
+        <p class='foot'>Источник данной информации был предоставлен компании Mozilla Foundation</p>
+    </footer>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
