@@ -14,15 +14,15 @@
         <h1 class='main-text'>Дискусія</h1>
         <h2 class='warning'>Увага!</h2>
         <h4 class='warning-more'>
-            Не довіряйте тим, хто пишуть, видають себе за творця сайту! 
+            Не довіряйте тим, хто видають себе за творця сайту! 
             Справжній автор сайту не пише нічого в постах, лише відповідає особисто поштою.
         </h4>
     </header>
     <div class='content'>
         {% for post in list_posts %}
-        <h3>Автор поста: {{ post.name }}</p>
-        <p>{{ post.text }}</p>
-        <hr>
+            <h3 id='all'>Автор поста: {{ post.name }}</p>
+            <p class='post'>{{ post.text }}</p>
+            <hr>
         {% endfor %}
     <form method="post" enctype="multipart/form-data" action="discussions">
         {% csrf_token %}

@@ -23,7 +23,7 @@
         <div class='block'>
             <h1 class='main-text'>Window.localStorage</h1>
             <p class='abstract'>
-                Властивість <strong>localStorage</strong> дозволяє отримати доступ до об'єкта <strong>Storage</strong>. 
+                Властивість <strong>localStorage</strong> (переклад з англ. "локальне сховище") дозволяє отримати доступ до об'єкта <strong>Storage</strong>. 
                 <strong>localStorage</strong> аналогічно властивості <strong>sessionStorage</strong>.
                 Різниця лише в тому, що властивість <strong>sessionStorage</strong> зберігає дані протягом сеансу (до закриття браузера), 
                 на відміну від даних, що знаходяться у властивості <strong>localStorage</strong>, 
@@ -32,15 +32,11 @@
                 Ключі та значення завжди рядки (так само, як і об'єкти, цілі ключі автоматично будуть перетворені на рядки).
             </p>
             <h2>Синтаксис</h2>
-            <div class='code'>
-                myStorage = window.localStorage;
-            </div>
+            <div class='code'>myStorage = window.localStorage;</div>
             <h2>Значення</h2>
             <p class='abstract'>Об'єкт <strong>Storage</strong>, який використовується для доступу до локального сховища.</p>
             <h2>Винятки</h2>
-            <div class='code'>
-                SecurityError
-            </div>
+            <div class='code'>SecurityError</div>
             <p class='abstract'>
                 Запит до сховища порушує дозвіл політик, або джерело зберігання не є коректною комбінацією схема/хост/порт 
                 (таке може статися, якщо джерелом для зберігання є <strong>file:</strong> або <strong>data:</strong> схеми, наприклад). 
@@ -50,21 +46,13 @@
             <p class='abstract'>
                 Наступний код показує приклад доступу до локального об'єкта <strong>Storage</strong> для поточного домену і додає дані до нього за допомогою <strong>Storage.setItem()</strong>.
             </p>
-            <div class='code'>
-                localStorage.setItem('myLesson', 'Math');
-            </div>
+            <div class='code'>localStorage.setItem('myLesson', 'Math');</div>
             <p class='abstract'>Зчитувати дані з <strong>localStorage</strong> для певного ключа можна так:</p>
-            <div class='code'>
-                let lesson = localStorage.getItem('myLesson');
-            </div>
+            <div class='code'>let lesson = localStorage.getItem('myLesson');</div>
             <p class='abstract'>Видаляти дані можна так (після видалення поверне <strong>undefined</strong>):</p>
-            <div class='code'>
-                localStorage.removeItem('myLesson');
-            </div>
+            <div class='code'>localStorage.removeItem('myLesson');</div>
             <p class='abstract'>Для видалення всіх записів, тобто повного очищення <strong>localStorage</strong>, використовуйте:</p>
-            <div class='code'>
-                localStorage.clear();
-            </div>
+            <div class='code' id='last-code'>localStorage.clear();</div>
         </div>
     </div>
     <footer>

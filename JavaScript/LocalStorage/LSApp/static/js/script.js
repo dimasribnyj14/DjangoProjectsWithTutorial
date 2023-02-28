@@ -1,6 +1,8 @@
 let copyBlock = document.querySelector('.copied');
-let OnAnimation = true
-function copycode(event){
+
+let OnAnimation = true // Якщо анимації будуть працювати
+
+function copycode(event) {
     var target = event.target || event.srcElement;
     console.log(target.innerHTML)
     if (event.target.classList.value == 'code') {
@@ -15,14 +17,14 @@ function copycode(event){
         if (OnAnimation == true) {
             copyBlock.style.left = '-3%';
             OnAnimation = false
-            setTimeout(offAnimation,2000);
+            setTimeout(offAnimation, 2000);
         }
     }
 }
-function offAnimation(event){
+function offAnimation(event) {
     OnAnimation = true;
     copyBlock.style.transition.duration = "1s";
     copyBlock.style.left = '-100%';
 }
 
-document.addEventListener('click',copycode)
+document.addEventListener('click', copycode)
