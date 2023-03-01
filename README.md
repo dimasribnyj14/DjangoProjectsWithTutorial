@@ -1,5 +1,6 @@
 # DjangoProjectsWithTutorial
 Hello, this repository was created to firstly learn how to write django and secondly to make programming tutorial sites.
+
 It will be useful for me and for you.
 
 There will be python and javascript in the main, but there will be other topics as well.
