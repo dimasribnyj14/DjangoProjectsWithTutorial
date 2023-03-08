@@ -16,7 +16,7 @@ function copycode(event) {
         document.body.removeChild(copyTextarea);
         if (OnAnimation == true) {
             copyBlock.style.left = '-3%';
-            OnAnimation = false
+            OnAnimation = false;
             setTimeout(offAnimation, 2000);
         }
     }
